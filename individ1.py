@@ -5,7 +5,7 @@
 # предложения, содержащие введенное с клавиатуры слово.
 
 if __name__ == '__main__':
-    with open('text1.txt', 'r') as f:
+    with open('text.txt', 'r') as f:
         text = f.read()
 
     text = text.replace("!", ".")
@@ -20,7 +20,5 @@ if __name__ == '__main__':
 
     for sentence in sentences:
         if word in sentence:
-            with open('text.txt', 'r') as i:
-                new_text = i.read()
-                if sentence in new_text:
-                    print(f'{sentence}{new_text[new_text.rfind(sentence) + len(sentence)]}')
+            if sentence in text:
+                print(f'{sentence}{text[text.rfind(sentence) + len(sentence)]}')
