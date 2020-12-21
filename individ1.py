@@ -21,4 +21,4 @@ if __name__ == '__main__':
     for sentence in sentences:
         if word in sentence:
             if sentence in text:
-                print(f'{sentence}{text[text.rfind(sentence) + len(sentence)]}')
+                print(f'{sentence}')

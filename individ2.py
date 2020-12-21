@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
             trains.append(train)
             if len(trains) > 1:
-                trains.sort(key=lambda item: item.get('num', ''))
+                trains.sort(key=lambda item: item.get('num', 0))
 
         elif command == 'list':
             line = '+-{}-+-{}-+-{}-+-{}-+'.format(
@@ -59,8 +59,8 @@ if __name__ == '__main__':
                     '| {:>4} | {:<30} | {:<20} | {:>17} |'.format(
                         idx,
                         train.get('name', ''),
-                        train.get('num', ''),
-                        train.get('time', 0)
+                        train.get('num', 0),
+                        train.get('time', '')
                     )
                 )
 
@@ -76,7 +76,7 @@ if __name__ == '__main__':
             for train in trains:
                 if train.get('num') == number:
                     count += 1
-                    print('Номер поезда:', train.get('num', ''))
+                    print('Номер поезда:', train.get('num', 0))
                     print('Пункт назначения:', train.get('name', ''))
                     print('Время отправления:', train.get('time', ''))
 
